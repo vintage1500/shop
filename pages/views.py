@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse
+from .models import Product, ProductImage
 
 # Create your views here.
 
@@ -8,4 +9,11 @@ def home_view(request):
 
 
 def shop_view(request):
-    return render(request, 'pages/shop.html')
+    products = Product.objects.all()
+    context = {
+        'products': products
+    }
+    return render(request, 'pages/shop.html', context)
+
+
+
