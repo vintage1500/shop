@@ -18,8 +18,10 @@
             {% get_categories as categories %}
             <ul>
                 {% for category in categories %}
-                <li><a href="#">{{ category }}</a></li>
+                <li {% if category.slug in request.path %} class="active" {% endif %}><a href="{% url 'category_products' category.slug %}">{{ category }}</a></li>
+<!--              Аналогичный вариант:  <li><a href="{{ category.get_absolute_url }}">{{ category }}</a></li>-->
                 {% endfor %}
+
             </ul>
         </div>
     </div>
@@ -129,9 +131,9 @@
                 <div class="single-product-wrapper">
                     <!-- Product Image -->
                     <div class="product-img">
-                        <img src="{% static 'img/product-img/product1.jpg' %}" alt="">
+                        <img src="{{ product.get_first_photo }}" alt="">
                         <!-- Hover Thumb -->
-                        <img class="hover-img" src="{% static 'img/product-img/product2.jpg' %}" alt="">
+                        <img class="hover-img" src="{{ product.get_second_photo }}" alt="" width="">
                     </div>
 
                     <!-- Product Description -->
@@ -139,9 +141,9 @@
                         <!-- Product Meta Data -->
                         <div class="product-meta-data">
                             <div class="line"></div>
-                            <p class="product-price">$180</p>
-                            <a href="product-details.html">
-                                <h6>Modern Chair</h6>
+                            <p class="product-price">{{ product.price }}</p>
+                            <a href="{{ product.get_absolute_url }}">
+                                <h6>{{ product.title }}</h6>
                             </a>
                         </div>
                         <!-- Ratings & Cart -->
@@ -161,6 +163,8 @@
                     </div>
                 </div>
             </div>
+            {% empty %}
+            <h4 class="text-center flex-grow-1">No products my friend</h4>
             {% endfor %}
         </div>
 

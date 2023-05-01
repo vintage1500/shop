@@ -1,5 +1,6 @@
 from django.db import models
 from django.template.defaultfilters import slugify
+from django.urls import reverse
 
 # Create your models here.
 
@@ -15,6 +16,9 @@ class Category(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('category_products', kwargs={'slug': self.slug})
 
     class Meta:
         verbose_name = 'Категория'
@@ -55,6 +59,24 @@ class Product(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         return super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('product_detail', kwargs={'slug': self.slug})
+
+    def get_first_photo(self):
+        photo = self.productimage_set.all().first()
+        if photo is not None:
+            return photo.photo.url
+        return 'https://basket-03.wb.ru/vol428/part42865/42865878/images/big/1.jpg'
+
+    def get_second_photo(self):
+        try:
+            photo = self.productimage_set.all()[1]
+            if photo is not None:
+                return photo.photo.url
+
+        except Exception as e:
+            return 'https://basket-03.wb.ru/vol428/part42865/42865878/images/big/1.jpg'
 
     class Meta:
         verbose_name = "Продукт"
