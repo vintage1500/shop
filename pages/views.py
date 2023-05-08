@@ -5,7 +5,11 @@ from .models import Product, Category
 
 
 def home_view(request):
-    return render(request, 'pages/index.html')
+    products = Product.objects.all()[:9]
+    context = {
+        'products': products
+    }
+    return render(request, 'pages/index.html', context)
 
 
 def shop_view(request):

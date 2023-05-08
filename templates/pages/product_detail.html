@@ -13,8 +13,8 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb mt-50">
                         <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
-                        <li class="breadcrumb-item"><a href="{{ product.category.get_absolute_url }}">{{
-                            product.category }}</a>
+                        <li class="breadcrumb-item"><a href="{{ product.category.get_absolute_url }}">
+                            {{ product.category }}</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">{{ product.title }}</li>
                     </ol>
