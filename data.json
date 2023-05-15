@@ -1,0 +1,188 @@
+[
+  {
+    "model": "pages.category",
+    "pk": 1,
+    "fields": {
+      "title": "Chairs",
+      "slug": "chairs"
+    }
+  },
+  {
+    "model": "pages.category",
+    "pk": 2,
+    "fields": {
+      "title": "Beds",
+      "slug": "beds"
+    }
+  },
+  {
+    "model": "pages.category",
+    "pk": 3,
+    "fields": {
+      "title": "Accesories",
+      "slug": "accesories"
+    }
+  },
+  {
+    "model": "pages.category",
+    "pk": 4,
+    "fields": {
+      "title": "Furniture",
+      "slug": "furniture"
+    }
+  },
+  {
+    "model": "pages.category",
+    "pk": 5,
+    "fields": {
+      "title": "Home Deco",
+      "slug": "home-deco"
+    }
+  },
+  {
+    "model": "pages.category",
+    "pk": 6,
+    "fields": {
+      "title": "Dressings",
+      "slug": "dressings"
+    }
+  },
+  {
+    "model": "pages.category",
+    "pk": 7,
+    "fields": {
+      "title": "Tables",
+      "slug": "tables"
+    }
+  },
+  {
+    "model": "pages.brand",
+    "pk": 1,
+    "fields": {
+      "title": "Amado",
+      "slug": "amado"
+    }
+  },
+  {
+    "model": "pages.brand",
+    "pk": 2,
+    "fields": {
+      "title": "Ikea",
+      "slug": "ikea"
+    }
+  },
+  {
+    "model": "pages.brand",
+    "pk": 3,
+    "fields": {
+      "title": "Furniture Inc",
+      "slug": "furniture-inc"
+    }
+  },
+  {
+    "model": "pages.brand",
+    "pk": 4,
+    "fields": {
+      "title": "The factory",
+      "slug": "the-factory"
+    }
+  },
+  {
+    "model": "pages.brand",
+    "pk": 5,
+    "fields": {
+      "title": "Artdeco",
+      "slug": "artdeco"
+    }
+  },
+  {
+    "model": "pages.product",
+    "pk": 1,
+    "fields": {
+      "title": "Стул",
+      "slug": "stul",
+      "description": "Лучший стул для учебы",
+      "price": 120000,
+      "quantity": 23,
+      "is_available": true,
+      "category": 1,
+      "brand": 2
+    }
+  },
+  {
+    "model": "pages.product",
+    "pk": 2,
+    "fields": {
+      "title": "Цветок",
+      "slug": "cvetok",
+      "description": "Разнообразит ваш дом",
+      "price": 140000,
+      "quantity": 12,
+      "is_available": true,
+      "category": 3,
+      "brand": 1
+    }
+  },
+  {
+    "model": "pages.product",
+    "pk": 3,
+    "fields": {
+      "title": "Стол",
+      "slug": "stol",
+      "description": "Удобнейшие столы",
+      "price": 200000,
+      "quantity": 4,
+      "is_available": true,
+      "category": 7,
+      "brand": 5
+    }
+  },
+  {
+    "model": "pages.productimage",
+    "pk": 1,
+    "fields": {
+      "photo": "products/DSC02498.jfif",
+      "product": 1
+    }
+  },
+  {
+    "model": "pages.productimage",
+    "pk": 2,
+    "fields": {
+      "photo": "products/images.jfif",
+      "product": 1
+    }
+  },
+  {
+    "model": "pages.productimage",
+    "pk": 3,
+    "fields": {
+      "photo": "products/Без_названия_1.jfif",
+      "product": 2
+    }
+  },
+  {
+    "model": "pages.productimage",
+    "pk": 4,
+    "fields": {
+      "photo": "products/90500958.jpg",
+      "product": 2
+    }
+  },
+  {
+    "model": "pages.productimage",
+    "pk": 5,
+    "fields": {
+      "photo": "products/dc72s5kp30dj9kn4bnhe9updqoour9xk.jpg",
+      "product": 3
+    }
+  },
+  {
+    "model": "pages.productimage",
+    "pk": 6,
+    "fields": {
+      "photo": "products/Без_названия_2.jfif",
+      "product": 3
+    }
+  }
+]
